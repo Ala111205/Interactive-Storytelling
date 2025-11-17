@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Story — The Echoes of Aridia</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="game">
+      <header class="topbar">
+        <div class="logo">Echoes of Aridia</div>
+        <div class="controls">
+          <button id="btn-back" title="Back">⟵ Back</button>
+          <button id="btn-save" title="Save">💾 Save</button>
+          <button id="btn-load" title="Load">📂 Load</button>
+          <button id="btn-inv" title="Inventory">🎒 <span id="inv-count">0</span></button>
+          <button id="btn-music" title="Toggle Music">♪</button>
+        </div>
+      </header>
+
+      <main class="novel">
+        <aside class="left-panel">
+          <div id="portrait" class="portrait">
+            <!-- scene image -->
+            <img id="scene-img" src="assets/img/placeholder.jpg" alt="scene" />
+          </div>
+
+          <div class="stats">
+            <div class="stat-row"><span>Health</span><div class="bar"><div id="bar-health"></div></div></div>
+            <div class="stat-row"><span>Morale</span><div class="bar"><div id="bar-morale"></div></div></div>
+            <div class="stat-row"><span>Energy</span><div class="bar"><div id="bar-energy"></div></div></div>
+          </div>
+        </aside>
+
+        <section class="center-panel">
+          <div id="scene" class="scene fade-in">
+            <div id="scene-text" class="text"></div>
+            <div id="choices" class="choices"></div>
+          </div>
+
+          <div class="bottom-controls">
+            <button id="btn-restart">Restart</button>
+            <div class="hint">Tip: Use Save to try different paths.</div>
+          </div>
+        </section>
+
+        <aside class="right-panel">
+          <div class="log">
+            <h4>Action Log</h4>
+            <div id="log-list"></div>
+          </div>
+        </aside>
+      </main>
+
+      <!-- Inventory modal -->
+      <div id="inventory-modal" class="modal hidden">
+        <div class="modal-content">
+          <h3>Inventory</h3>
+          <div id="inventory-list" class="inventory-list"></div>
+          <button id="close-inv">Close</button>
+        </div>
+      </div>
+
+      <!-- Save slot modal -->
+      <div id="save-modal" class="modal hidden">
+        <div class="modal-content">
+          <h3>Save Slot</h3>
+          <div id="save-slots"></div>
+          <button id="close-save">Close</button>
+        </div>
+      </div>
+
+      <!-- Audio elements -->
+      <audio id="bgm" loop src="assets/sound/alert.mp3"></audio>
+      <audio id="sfx-select" src="assets/sound/crash-down.mp3"></audio>
+      <audio id="sfx-pick" src="assets/sound/button.mp3"></audio>
+    </div>
+    <div id="tap-start">
+      <div class="tap-text">
+        Tap to Start
+      </div>
+    </div>
+  </div>
+
+  <script src="story.js" defer></script>
+  <script src="engine.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* Comic-Style Visual Novel UI */
+:root {
+    --bg: #0b0b0f;
+    --panel: #0f1720;
+    --accent: #ff6b6b;
+    --muted: #9aa5b1;
+    --glass: rgba(255, 255, 255, 0.03);
+    --round: 14px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #041023 0%, #070712 100%);
+    font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    color: #e6eef6;
+    position: fixed;
+}
+
+/* Main Game Container */
+#game {
+    max-width: 1200px;
+    margin: 18px auto;
+    padding: 4px;
+    border-radius: 12px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.02),
+        rgba(0, 0, 0, 0.05)
+    );
+    box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
+    overflow: hidden;
+}
+
+/* Top Bar */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: var(--glass);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.6px;
+}
+
+.controls button {
+    margin-left: 8px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.controls button:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    transition: all 120ms ease;
+}
+
+/* Layout Grid */
+.novel {
+    display: grid;
+    grid-template-columns: 260px 1fr 260px;
+    gap: 16px;
+    padding: 12px 8px;
+}
+
+/* Side Panels */
+.left-panel,
+.right-panel {
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 12px;
+    color: #cfe6ff;
+    min-height: 420px;
+}
+
+/* Center Panel */
+.center-panel {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Character Portrait */
+.portrait {
+    height: 320px;
+    background: linear-gradient(180deg, #091018, #071422);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.portrait img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Stats Panel */
+.stats {
+    margin-top: 12px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.bar {
+    width: 70%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 8px;
+}
+
+.bar > div {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(90deg, var(--accent), #ffd166);
+}
+
+/* Story Scene */
+.scene {
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 18px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e8f2ff;
+    padding: 4px 2px;
+    min-height: 220px;
+}
+
+/* Choices */
+.choices {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+}
+
+.choices button {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #0c1520;
+    color: #dcefff;
+    margin-bottom: 10px;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.5);
+    transition: transform 150ms ease;
+}
+
+.choices button:hover {
+    transform: translateY(-4px);
+}
+
+/* Bottom Controls */
+.bottom-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.bottom-controls button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #12202a;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Log Panel */
+.right-panel .log {
+    max-height: 420px;
+    overflow: auto;
+}
+
+#log-list {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 60;
+}
+
+.modal .modal-content {
+    background: var(--panel);
+    padding: 16px;
+    border-radius: 12px;
+    min-width: 320px;
+    color: #e9f6ff;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Inventory */
+.inventory-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.inv-item {
+    padding: 10px;
+    background: #08111a;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.inv-item .name {
+    font-weight: 600;
+}
+
+.inv-item .desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* Responsive Layout */
+@media only screen and (max-width: 800px) {
+    .container {
+        position: unset;
+    }
+
+    .novel {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .portrait {
+        height: 220px;
+    }
+
+    .bottom-controls {
+        gap: 5px;
+    }
+}
+
+@media only screen and (max-width: 345px) {
+    .topbar {
+        padding: 5px 7px;
+        font-size: 16px;
+    }
+}
+
+/* Transitions / Animations */
+.fade-in {
+    animation: fadeUp 350ms ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Start */
+#tap-start {
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    color:#fff;
+    font-size:28px;
+    user-select:none;
+    cursor:pointer;
+    animation: fadein 0.6s ease-out;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tap-text {
+    opacity:0.8; 
+    animation:pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
