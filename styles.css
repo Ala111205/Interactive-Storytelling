@@ -36,6 +36,14 @@
     );
     box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
     overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.show-game #game {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.2s ease-out;
 }
 
 /* Top Bar */

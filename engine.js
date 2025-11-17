@@ -292,6 +292,7 @@ function renderSaveSlots() {
 
 // ---- UI event wiring ----
 document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("show-game");
 
   // --- Inventory Open ---
   els.btnInv.addEventListener("click", () => {
@@ -414,6 +415,7 @@ function unlockAudioAndStartGame() {
   // Remove overlay immediately (game starts)
   const overlay = document.getElementById("tap-start");
   if (overlay) overlay.remove();
+  document.getElementById("game").style.display = "block";
 
   // Now you can run your UI + scene initialization
   updateUI();
