@@ -36,15 +36,15 @@
     );
     box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
     overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
+    /* opacity: 0; */
+    /* pointer-events: none; */
 }
 
-body.show-game #game {
+/* body.show-game #game {
     opacity: 1;
     pointer-events: auto;
     transition: opacity 0.2s ease-out;
-}
+} */
 
 /* Top Bar */
 .topbar {
@@ -130,24 +130,35 @@ body.show-game #game {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 5px;
     margin-bottom: 8px;
     font-size: 0.9rem;
 }
 
-.bar {
-    width: 70%;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-left: 8px;
+.stat-row span {
+    width: 25%;
 }
 
-.bar > div {
+.bar {
+  width: 85%;
+  height: 12px;
+  background: #222;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar .bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #ffd166);
+  transition: width 0.25s ease-out;
+}
+ 
+/* .bar > div {
     height: 100%;
     width: 50%;
     background: linear-gradient(90deg, var(--accent), #ffd166);
-}
+} */
 
 /* Story Scene */
 .scene {
@@ -225,6 +236,7 @@ body.show-game #game {
 .modal {
     position: fixed;
     inset: 0;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,8 +248,35 @@ body.show-game #game {
     background: var(--panel);
     padding: 16px;
     border-radius: 12px;
-    min-width: 320px;
+    min-width: 275px;
     color: #e9f6ff;
+}
+
+.modal-content div:first-child {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.fa-arrow-rotate-right {
+    font-size: 18px;
+    color: #e9f6ff;
+    cursor: pointer;
+    display: inline-block;
+    transform-origin: center center;
+    will-change: transform; 
+}
+
+/* FontAwesome renders an SVG inside the <i> */
+.fa-arrow-rotate-right svg {
+  transform-box: fill-box;        
+  transform-origin: center center;
+}
+
+.save-slot-btn, .slot-row {
+  touch-action: none;
+  user-select: none;
 }
 
 .hidden {
@@ -266,6 +305,11 @@ body.show-game #game {
 .inv-item .desc {
     font-size: 0.85rem;
     color: var(--muted);
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.5s;
 }
 
 /* Responsive Layout */
@@ -315,7 +359,8 @@ body.show-game #game {
 #tap-start {
     position:fixed;
     inset:0;
-    background:#000;
+    background: url("./game/assets/img/Ancient-shard.png");
+    background-repeat: round;
     display:flex;
     align-items:center;
     justify-content:center;
