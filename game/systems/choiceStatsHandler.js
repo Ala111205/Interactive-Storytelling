@@ -3,7 +3,7 @@ import { stateManager } from "../core/stateManager.js";
 import saveSystem from "../core/saveSystem.js";
 import { eventBus } from "../core/eventBus.js";
 
-// robust: works regardless of whether stateManager exposes setStats/getStats
+// works regardless of whether stateManager exposes setStats/getStats
 
 export async function applyChoiceStats(choice = {}) {
   if (!choice || !choice.stats) return;

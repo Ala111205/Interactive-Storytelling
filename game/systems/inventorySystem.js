@@ -156,7 +156,7 @@ const inventorySystem = {
     return stateManager.getInventory();
   },
 
-  // Replace inventory fully (used by save restore or admin)
+  // Replace inventory fully 
   replaceInventory(itemsArray = []) {
 
     if (typeof stateManager.replaceInventory === "function") {

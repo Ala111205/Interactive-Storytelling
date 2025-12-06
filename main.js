@@ -114,7 +114,6 @@ function setupUIEvents() {
   btnInv?.addEventListener("click", () => {
     audioManager.playSFX("sfxPick");
     invModal.classList.toggle("hidden");
-    eventBus.emit("inventory:get", renderInventory);
   });
 
   closeInv?.addEventListener("click", () => {
@@ -294,6 +293,10 @@ function renderInventory(items = []) {
 
   countElem.textContent = total;
 }
+
+eventBus.on("inv:refresh", (items) => {
+  renderInventory(items);
+});
 
 /* ---------------------------------------
    SAVE SLOTS (SAVE SCREEN)

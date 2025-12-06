@@ -110,7 +110,7 @@ export const sceneManager = {
     return node;
   },
 
-  // safer goBack: loads previous node
+  // goBack: loads previous node
   async goBack(options = {}) {
     if (!this.history.length) return null;
 

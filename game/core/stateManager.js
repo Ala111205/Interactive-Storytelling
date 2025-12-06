@@ -20,9 +20,9 @@ const DEFAULT_STATS = Object.freeze({
 const _state = {
   currentStory: "A",
   currentScene: "start",
-  inventory: [],        // [{ id, count }]
-  flags: {},            // { flagName: true }
-  history: [],          // visited scenes
+  inventory: [],        
+  flags: {},           
+  history: [],         
   stats: { ...DEFAULT_STATS }
 };
 

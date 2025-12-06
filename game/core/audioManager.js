@@ -1,4 +1,3 @@
-// audioManager.js
 import { eventBus } from "./eventBus.js";
 import { stateManager } from "./stateManager.js";
 

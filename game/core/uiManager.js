@@ -1,4 +1,3 @@
-// uiManager.js
 import { eventBus } from "../core/eventBus.js";
 import saveSystem from "../core/saveSystem.js";
 import { stateManager } from "../core/stateManager.js";

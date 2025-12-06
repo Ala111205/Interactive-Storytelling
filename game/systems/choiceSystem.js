@@ -1,4 +1,3 @@
-// systems/choiceSystem.js
 import { eventBus } from "../core/eventBus.js";
 import { storyActions } from "../story/storyActions.js";
 import { sceneManager } from "../core/sceneManager.js";

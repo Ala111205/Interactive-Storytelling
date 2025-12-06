@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Comic-Style Visual Novel UI */
 :root {
     --bg: #0b0b0f;
     --panel: #0f1720;
@@ -36,15 +35,7 @@
     );
     box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
     overflow: hidden;
-    /* opacity: 0; */
-    /* pointer-events: none; */
 }
-
-/* body.show-game #game {
-    opacity: 1;
-    pointer-events: auto;
-    transition: opacity 0.2s ease-out;
-} */
 
 /* Top Bar */
 .topbar {
@@ -153,12 +144,6 @@
   background: linear-gradient(90deg, var(--accent), #ffd166);
   transition: width 0.25s ease-out;
 }
- 
-/* .bar > div {
-    height: 100%;
-    width: 50%;
-    background: linear-gradient(90deg, var(--accent), #ffd166);
-} */
 
 /* Story Scene */
 .scene {

@@ -1,6 +1,3 @@
-// ===============================================
-//  Global Story Flag Definitions
-// ===============================================
 export const storyFlags = {
 
   // All possible flags (metadata only)
