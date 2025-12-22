@@ -7,7 +7,7 @@
     This project isn’t just a story — it’s a scalable narrative engine.
 
 
-**Repository Link:-** https://ala111205.github.io/Interactive-Storytelling/
+**Live Demo:-** https://ala111205.github.io/Interactive-Storytelling/
 
 **🚀 Core Features:-**
 
